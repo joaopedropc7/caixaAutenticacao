@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimentaçoes</title>
+</head>
+<body>
+    <h1>Movimentações</h1>
+    <form action="/movimentacao" method="POST">
+
+        <input type="hidden" id="contaId" name="contaId" th:value="${contaId}">
+
+        <label for="valor">Valor:</label>
+        <input type="text" id="valor" th:value="${valor}" name="valor" required>
+
+        <label for="tipoReceita">Tipo de Receita:</label>
+        <select id="tipoReceita" name="tipoReceita" required>
+            <option value="" disabled selected>Selecione um tipo de receita</option>
+            <option th:each="tipoReceita : ${tipoReceita}" th:value="${tipoReceita}" th:text="${tipoReceita}"></option>
+        </select>
+
+
+        <label for="historico">Histórico:</label>
+        <input type="text" id="historico" th:value="${historico}" name="historico" required>
+
+        <input type="submit" value="Adicionar Movimentação">
+    </form>
+</body>
+</html>

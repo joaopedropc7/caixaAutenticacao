@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas</title>
+</head>
+<body>
+    <h1>Lista de Contas</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome da Conta</th>
+        </tr>
+        <tr th:each="conta : ${contas}">
+            <td th:text="${conta.id}"></td>
+            <td>
+                <a th:href="@{'/home/' + ${conta.id}}" th:text="${conta.nomeConta}"></a>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

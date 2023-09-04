@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conta Cadastro</title>
+</head>
+<body>
+    
+    <h1>Formulário</h1>
+    <form id="myForm" th:object="${conta}" th:action="@{/contas/forms}" method="POST">
+        <label for="nomeConta">Nome da Conta:</label>
+        <input type="text" id="nomeConta" th:value="${nomeConta}" name="nomeConta" required><br><br>
+
+        <label for="idGrupo">Grupo:</label>
+        <select id="idGrupo" name="idGrupo" required>
+            <option value="" disabled selected>Selecione um grupo</option>
+            <option th:each="grupo : ${grupos}" th:value="${grupo.id}" th:text="${grupo.name}"></option>
+        </select><br><br>
+
+        <label for="tipoConta">Tipo de Conta:</label>
+        <select id="tipoConta" name="tipoConta" required>
+            <option value="" disabled selected>Selecione um tipo de conta</option>
+            <option th:each="tipoConta : ${tipoContas}" th:value="${tipoConta}" th:text="${tipoConta}"></option>
+            <!-- Adicione mais opções conforme necessário -->
+        </select><br><br>
+        
+        <button type="submit">Enviar</button>
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/">
+    <title>Home</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Caixa</h1>
+    </header>
+    <nav>
+        <a href="/grupo">GRUPOS</a>
+        <a href="/movimentacao">MOVIMENTAÇÕES</a>
+        <select>
+            <option value="relatorio1">Relatório por Grupo</option>
+            <option value="relatorio2">Relatório por Data</option>
+            <option value="relatorio3">Relatório por Conta</option>
+        </select>
+        <a href="/contas">TROCAR DE CONTA</a>
+    </nav>
+    <div class="container">
+        <!-- Conteúdo da página vai aqui -->
+        <p>Bem-vindo à sua página inicial. Selecione uma opção no menu acima.</p>
+    </div>
+</body>
+</html>

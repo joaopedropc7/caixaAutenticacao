@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de contas</title>
+</head>
+<body>
+<h1>Lista de Contas</h1>
+<ul>
+    <li th:each="conta : ${contas}">
+        <a th:href="@{'/home/' + ${conta.id}}"><span th:text="${conta.nome}"></span></a>
+    </li>
+</ul>
+</body>
+</html>

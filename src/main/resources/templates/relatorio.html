@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatorio</title>
+</head>
+<body>
+    <h1>Relatório Conta</h1>
+    
+    <!-- Informações no topo -->
+    <table>
+        <tr>
+            <th>Conta</th>
+            <th>Data</th>
+            <th>Histórico</th>
+            <th>Valor de Entrada</th>
+            <th>Valor de Saída</th>
+            <th>Saldo</th>
+        </tr>
+        <tr th:each="relatorio : ${relatorios.relatorios}">
+
+            <td th:text="${relatorio.conta}"></td>
+            <td th:text="${relatorio.data}"></td>
+            <td th:text="${relatorio.historico}"></td>
+            <td th:text="${relatorio.valorEntrada}"></td>
+            <td th:text="${relatorio.valorSaida}"></td>
+            <td th:text="${relatorio.saldo}"></td>
+        </tr>
+    </table>
+
+    <div>
+        <p>Total de Entradas: <span th:text="${relatorios.totalEntradas}"></span></p>
+        <p>Total de Saídas: <span th:text="${relatorios.totalSaidas}"></span></p>
+        <p>Saldo Total: <span th:text="${relatorios.saldoTotal}"></span></p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contas</title>
+</head>
+<body>
+    <h1>Lista de Grupos</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nome da Conta</th>
+        </tr>
+        <tr th:each="grupo : ${grupos}">
+            <td th:text="${grupo.id}"></td>
+            <td th:text="${grupo.name}"></td>
+        </tr>
+    </table>
+</body>
+</html>
